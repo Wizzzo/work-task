@@ -9,6 +9,7 @@ pipeline {
     stage('unit tests') {
       steps {
         withNPM(npmrcConfig: '/usr/local/etc/npmrc') {
+          sh 'npm install'
           sh 'npm run unit:tests'
         }
 
