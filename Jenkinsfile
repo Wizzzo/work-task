@@ -1,3 +1,9 @@
+properties([
+  parameters([
+    boolean(name: 'staging', defaultValue: 'false')
+  ])
+])
+
 pipeline {
   agent any
   stages {
