@@ -8,7 +8,7 @@ pipeline {
     }
     stage('unit tests') {
       steps {
-        withNPM(npmrcConfig: '/usr/local/etc/npmrc') {
+        withNPM(npmrcConfig: '/var/lib/jenkins/npmrc') {
           sh 'npm install'
           sh 'npm run unit:tests'
         }
