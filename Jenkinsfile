@@ -20,7 +20,7 @@ pipeline {
           def version = json.version
           def name = json.name
           echo version
-          sh 'zip -r .zip ./'
+          sh 'zip -r ' + name + '-' + version + '.zip ./'
           sh 'curl -uadmin:AP57BMy9gSebA1RGQee8AvrDe33 -T ./' + name + '-' + version + '.zip "http://52.209.252.95:8081/artifactory/example-repo-local/' + name + '-' + version + '.zip"'
         }
 
