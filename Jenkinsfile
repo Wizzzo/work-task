@@ -14,8 +14,8 @@ pipeline {
     }
     stage('upload artifact to artifactory') {
       steps {
-        readFile(file: './package.json', encoding: 'UTF-8')
         script {
+          def jsonFile = readFile(file: './package.json', encoding: 'UTF-8')
           def json = new groovy.json.JsonSlurperClassic().parseText(jsonFile)
           def version = json.version
           def name = json.name
