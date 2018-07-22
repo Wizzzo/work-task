@@ -16,7 +16,7 @@ pipeline {
       steps {
         readFile(file: 'package.json', encoding: 'UTF-8')
         script {
-          def json = readJSON file:'package.json'
+          new groovy.json.JsonSlurperClassic().parseText(json)
           def version = json.version
           def name = json.name
           echo version
