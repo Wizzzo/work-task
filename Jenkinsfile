@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('git clone') {
       steps {
-        git(url: 'git@github.com:Wizzzo/work-task.git', branch: 'master', credentialsId: 'github-ssh')
+        git(url: 'git@github.com:Wizzzo/work-task.git', branch: 'dev', credentialsId: 'github-ssh')
       }
     }
     stage('unit tests') {
